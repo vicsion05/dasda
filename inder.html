@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website with Accordion Menu</title>
+    <style>
+        /* Layout cho toàn bộ trang */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Tiêu đề trang */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Layout chia cột */
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px; /* Đặt chiều rộng tối đa cho trang */
+            margin: 0 auto; /* Canh giữa trang */
+        }
+
+        /* Cột bên trái */
+        .sidebar {
+            flex: 1; /* Chiếm 1 phần không gian */
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            margin-right: 20px; /* Khoảng cách giữa sidebar và nội dung */
+        }
+
+        .sidebar h2 {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #444;
+            margin: 0;
+            border-radius: 5px;
+        }
+
+        .sidebar h2:hover {
+            background-color: #0077b6;
+        }
+
+        /* Ẩn nội dung của menu con mặc định */
+        .submenu {
+            display: none;
+            margin-left: 15px;
+        }
+
+        .submenu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .submenu a:hover {
+            background-color: #0077b6;
+        }
+
+        /* Nội dung chính */
+        .content {
+            flex: 2; /* Chiếm 2 phần không gian */
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none; /* Ẩn nội dung mặc định */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h2 {
+            color: #0077b6;
+        }
+
+        section {
+            margin-top: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Xếp chồng cho màn hình nhỏ */
+            }
+
+            .sidebar {
+                margin-right: 0; /* Bỏ khoảng cách bên phải */
+                margin-bottom: 20px; /* Thêm khoảng cách bên dưới */
+            }
+
+            .content {
+                width: 100%; /* Đảm bảo nội dung chính chiếm 100% chiều rộng */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tiêu đề -->
+    <header>
+        <h1>NHÓM 9</h1>
+    </header>
+
+    <!-- Phần chính của trang: Layout với sidebar và content -->
+    <div class="container">
+        <!-- Cột bên trái (Sidebar) -->
+        <div class="sidebar">
+            <h2 onclick="toggleMenu('submenu1')">HTML</h2>
+            <div id="submenu1" class="submenu">
+                <a href="#section1" onclick="showContent('html')">Định nghĩa HTML</a>
+                <a href="#section2" onclick="showContent('html')">Các chức năng của HTML</a>
+            </div>
+
+            <h2 onclick="toggleMenu('submenu2')">CSS</h2>
+            <div id="submenu2" class="submenu">
+                <a href="#section3" onclick="showContent('css')">Định nghĩa CSS</a>
+                <a href="#section4" onclick="showContent('css')">Chức năng của CSS</a>
+            </div>
+        </div>
+
+        <!-- Nội dung chính (Main content) -->
+        <div class="content" id="mainContent">
+            <section id="section1">
+                <h2>Định nghĩa HTML</h2>
+                <p>HTML viết tắt của Hypertext Markup Language là ngôn ngữ lập trình dùng để xây dựng và cấu trúc lại các thành phần có trong Website.</p>
+            </section>
+
+            <section id="section2">
+                <h2>Các chức năng của HTML</h2>
+                <p>Đoạn này giải thích các chức năng của HTML và cách sử dụng nó trên các trang web.</p>
+            </section>
+
+            <section id="section3">
+                <h2>Định nghĩa CSS</h2>
+                <p>Đoạn này nói về CSS. CSS được sử dụng để điều khiển kiểu dáng của một tài liệu web theo cách đơn giản và dễ dàng.</p>
+            </section>
+
+            <section id="section4">
+                <h2>Chức năng của CSS</h2>
+                <p>Đoạn này giới thiệu các chức năng khác nhau của CSS và cách sử dụng chúng.</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Hàm để ẩn/hiện submenu
+        function toggleMenu(id) {
+            var submenu = document.getElementById(id);
+            if (submenu.style.display === "block") {
+                submenu.style.display = "none";
+            } else {
+                submenu.style.display = "block";
+            }
+        }
+
+        // Hàm để hiển thị nội dung chính theo menu
+        function showContent(type) {
+            var content = document.getElementById("mainContent");
+            content.style.display = "block"; // Hiện nội dung chính
+            var sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                section.style.display = "none"; // Ẩn tất cả các section
+            });
+
+            // Hiển thị section tương ứng
+            if (type === 'html') {
+                document.getElementById("section1").style.display = "block"; // Hiện Định nghĩa HTML
+                document.getElementById("section2").style.display = "block"; // Hiện Các chức năng của HTML
+            } else if (type === 'css') {
+                document.getElementById("section3").style.display = "block"; // Hiện Định nghĩa CSS
+                document.getElementById("section4").style.display = "block"; // Hiện Chức năng của CSS
+            }
+        }
+    </script>
+
+</body>
+</html>
