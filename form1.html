@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ĐĂNG KÝ THÀNH VIÊN CLB YÊU NHẠC</title>
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <form action="#" method="POST">
+        <table border="1" cellpadding="4" cellspacing="0" width="500">
+            <caption><strong>ĐĂNG KÝ THÀNH VIÊN CLB YÊU NHẠC</strong></caption>
+            <!-- Hàng 1: Họ tên --> 
+            <tr>
+                <td>Họ tên:</td>
+                <td><input type="text" id="hoten" name="hoten"></td>
+            </tr>
+            <!-- Hàng 2: Tên đăng nhập -->
+            <tr>
+                <td>Tên đăng nhập:</td>
+                <td><input type="text" id="username" name="username"></td>
+            </tr>
+            <!-- Hàng 3: Mật khẩu -->
+            <tr>
+                <td>Mật khẩu:</td>
+                <td><input type="password" id="pass" name="pass"></td>
+            </tr>
+            <!-- Hàng 4: Gõ lại mật khẩu -->
+            <tr>
+                <td>Gõ lại mật khẩu:</td>
+                <td><input type="password" id="repass" name="repass"></td>
+            </tr>
+            <!-- Hàng 5: Phái -->
+            <tr>
+                <td>Phái:</td>
+                <td>
+                    <input type="radio" id="nam" name="phai" value="0">
+                    <label for="nam">Nam</label>
+                    <input type="radio" id="nu" name="phai" value="1">
+                    <label for="nu">Nữ</label>
+                </td>
+            </tr>
+            <!-- Hàng 6: Ngoại ngữ -->
+            <tr>
+                <td>Ngoại ngữ:</td>
+                <td>
+                    <input type="checkbox" id="anh" name="ngoaingu" value="Anh">
+                    <label for="anh">Anh</label>
+                    <input type="checkbox" id="phap" name="ngoaingu" value="Pháp">
+                    <label for="phap">Pháp</label>
+                    <input type="checkbox" id="hoa" name="ngoaingu" value="Hoa">
+                    <label for="hoa">Hoa</label>
+                </td>
+            </tr>
+            <!-- Hàng 7: Nghề nghiệp -->
+            <tr>
+                <td>Nghề nghiệp:</td>
+                <td>
+                    <select id="nghenghiep" name="nghenghiep">
+                        <option value="0">Bạn làm nghề gì</option>
+                        <option value="1">Học sinh - Sinh viên</option>
+                        <option value="2">Giáo viên</option>
+                        <option value="3">Nhân viên</option>
+                    </select>
+                </td>
+            </tr>
+            <!-- Hàng 8: Hình -->
+            <tr>
+                <td>Hình:</td>
+                <td><input type="file" id="hinh" name="hinh"></td>
+            </tr>
+            <!-- Hàng 9: Sở thích -->
+            <tr>
+                <td>Sở thích:</td>
+                <td><textarea id="sothich" name="sothich" rows="4" cols="30"></textarea></td>
+            </tr>
+            <!-- Hàng 10: Nút đăng ký và làm lại -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" id="dangky" value="Đăng ký">
+                    <input type="reset" id="xoa" value="Làm lại">
+                    <input type="hidden" name="NgayDangKy" value="30/4/2009">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
