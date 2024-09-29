@@ -4,89 +4,57 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f2f2f2;
+    background-color: #fefefe;
 }
 table {
-    background-color:pink;
+    background-color:#f6a3a3;
     border-collapse: collapse;
     border: 4px solid #000; 
-    color:blue;
+    color:#0e11e8;
 }   
 caption {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 form {
-    border: 1px solid #ccc;
+    border: 1px solid #ffffff;
     padding: 20px;
-    background-color: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px #0000003b;
 }
-
 td {
-    border: 2px solid grey; /* Làm dày viền của các ô trong bảng */
-    padding: 8px;
+    border: 3px solid #b4908be9;
+    padding: 9px;
 }
 input {
-    background-color: darkcyan; 
-    color: greenyellow ;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    background-color: #00398e; 
+    color: #16bd16 ;
 }
-
-/* Áp dụng cho textarea */
 textarea {
-    background-color: darkcyan;
-    color : greenyellow;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    background-color: #00398e;
+    color : #16bd16;
 }
-
-/* Áp dụng cho select */
 select {
-    background-color: darkcyan;
-    color : greenyellow;
+    font-family: 'Times New Roman';
+    font-size: 15px;
+    background-color: #00398e;
+    color : #16bd16;
 }
-
-/* Giữ nguyên kiểu mặc định cho các nút Đăng ký và Làm lại */
 input[type="submit"], input[type="reset"] {
-    padding: 5px 15px; /* Đặt kích thước padding cho nút */
-    border: 1px solid black; /* Đường viền mặc định cho nút */
-    border-radius: 5px; /* Bo góc nút */
-    cursor: pointer; /* Thay đổi con trỏ chuột khi rê vào */
-    background-color: white;
-    color: initial;
+    font-family: 'Times New Roman';
+    padding: 5px 8px;
+    border: 0.5px solid #ffffff4b;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ffffff4b;
+    color: #000;
+    transition: all 0.5s ease
 }
-input[type="submit"]:focus, input[type="reset"]:focus {
-    outline: 2px solid blue; /* Tạo viền xanh dương dày 2px */
-    outline-offset: 2px; /* Khoảng cách giữa viền và nút */
-}
-input[type="submit"]:hover, input[type="reset"]:hover {
-    border: 2px solid blue; /* Đổi viền thành màu xanh dương */
-}
-#hoten,
-#username,
-#pass,
-#repass,
-#sothich {
-    width: 98%; /* Chiếm 98% chiều rộng của ô */
-    padding: 5px; /* Tạo khoảng cách bên trong */
-    box-sizing: border-box; /* Bao gồm padding và border trong kích thước */
-}
-
-/* Giữ nguyên các phần tử khác như radio, checkbox, file,... */
-input[type="file"],
-input[type="radio"],
-input[type="checkbox"],
-select {
-    width: auto; /* Giữ kích thước mặc định cho các phần tử này */
-}
-
-/* Thay đổi khi rê chuột vào nút */
-input[type="submit"]:hover, input[type="reset"]:hover {
-    outline: 2px solid blue; /* Khi rê chuột vào nút, khung viền sẽ chuyển sang màu xanh */
-}
-
-/* Viền cho toàn bộ bảng (bao gồm cả caption) */
-table {
-    border: 2px solid red; /* Viền cho bảng màu đỏ */
-    margin: 10px auto; /* Căn giữa bảng và tạo khoảng cách trên/dưới */
-    border: 4px solid #000; 
+input[type="submit"]:hover, input[type="reset"]:hover{
+    background-color: #ffffff;
 }
